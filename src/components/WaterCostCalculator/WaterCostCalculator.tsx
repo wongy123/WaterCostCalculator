@@ -8,6 +8,7 @@ const WaterCostCalculator = () => {
   const [userInput, setUserInput] = useState<UserInput>({
     waterUsageCharge: 0,
     waterServiceCharge: 0,
+    sewerageServiceCharge: 0,
     waterUsage: 0,
     numberOfDays: 0,
   });
@@ -16,6 +17,7 @@ const WaterCostCalculator = () => {
   const [results, setResults] = useState<ResultsData>({
     totalUsageCost: 0,
     totalServiceCost: 0,
+    totalSewerageServiceCost: 0,
     totalCost: 0,
     averageCostPerDay: 0,
   });

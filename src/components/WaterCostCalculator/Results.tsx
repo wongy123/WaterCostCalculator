@@ -1,6 +1,7 @@
 export interface ResultsData {
   totalUsageCost: number;
   totalServiceCost: number;
+  totalSewerageServiceCost: number;
   totalCost: number;
   averageCostPerDay: number;
 }
@@ -23,15 +24,20 @@ const Results = ({ data }: Props) => {
           </tr>
           {/* row 2 */}
           <tr>
-            <th>Total Service Cost</th>
+            <th>Total Water Service Cost</th>
             <td>${data.totalServiceCost.toFixed(2)}</td>
           </tr>
           {/* row 3 */}
           <tr>
+            <th>Total Sewerage Service Cost</th>
+            <td>${data.totalSewerageServiceCost.toFixed(2)}</td>
+          </tr>
+          {/* row 4 */}
+          <tr>
             <th>Total Cost</th>
             <td>${data.totalCost.toFixed(2)}</td>
           </tr>
-          {/* row 4 */}
+          {/* row 5 */}
           <tr>
             <th>Average Cost Per Day</th>
             <td>${data.averageCostPerDay.toFixed(2)}</td>
