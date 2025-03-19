@@ -1,4 +1,4 @@
-import InputField from "./InputField";
+import InputField from "../ui/InputField";
 
 export interface UserInput {
   waterUsageCharge: number;
@@ -21,6 +21,7 @@ const InputForm = ({ onFieldChange }: Props) => {
             <th>Water Usage Charge ($ per kL)</th>
             <td>
               <InputField
+                dataType="number"
                 onInputChange={(value: number) =>
                   onFieldChange("waterUsageCharge", value)
                 }
@@ -31,6 +32,7 @@ const InputForm = ({ onFieldChange }: Props) => {
             <th>Water Service Charge (per day)</th>
             <td>
               <InputField
+                dataType="number"
                 onInputChange={(value: number) =>
                   onFieldChange("waterServiceCharge", value)
                 }
@@ -41,6 +43,7 @@ const InputForm = ({ onFieldChange }: Props) => {
             <th>Sewerage Service Charge (per day)</th>
             <td>
               <InputField
+                dataType="number"
                 onInputChange={(value: number) =>
                   onFieldChange("sewerageServiceCharge", value)
                 }
@@ -51,6 +54,7 @@ const InputForm = ({ onFieldChange }: Props) => {
             <th>Number of Days</th>
             <td>
               <InputField
+                dataType="number"
                 onInputChange={(value: number) =>
                   onFieldChange("numberOfDays", value)
                 }
@@ -61,6 +65,7 @@ const InputForm = ({ onFieldChange }: Props) => {
             <th>Total Water Usage (kL)</th>
             <td>
               <InputField
+                dataType="number"
                 onInputChange={(value: number) =>
                   onFieldChange("waterUsage", value)
                 }
