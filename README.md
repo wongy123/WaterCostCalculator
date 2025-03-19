@@ -2,7 +2,8 @@
 
 A web app created to calculate water bills.
 
-![WaterCostCalculator Logo](https://github.com/user-attachments/assets/9e9e9635-e5dc-46a7-87ea-367eaeedc048)
+![image](https://github.com/user-attachments/assets/e515165b-6edb-4e95-a1fa-13df7c3fe086)
+
 
 ## Future Features
 
