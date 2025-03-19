@@ -15,21 +15,23 @@ export interface UserInput {
     averageCostPerDay: number;
   }
   //All calculations rounded down to 2 decimal places to match the way utility companies calculate their bills
+  const roundDownToTwo = (num: number): number => Math.floor(num * 100) / 100;
+
   export const calculateWaterCost = ({ waterUsageCharge, waterServiceCharge, sewerageServiceCharge, waterUsage, numberOfDays }: UserInput): ResultsData => {
     // Calculate the cost based on water usage charge per kL
-    const totalUsageCost = parseFloat((waterUsage * waterUsageCharge).toFixed(2));
+    const totalUsageCost = roundDownToTwo(waterUsage * waterUsageCharge);
   
     // Calculate the cost based on water service charge per day
-    const totalServiceCost = parseFloat((waterServiceCharge * numberOfDays).toFixed(2));
+    const totalServiceCost = roundDownToTwo(waterServiceCharge * numberOfDays);
 
     // Calculate the cost based on sewerage service charge per day
-    const totalSewerageServiceCost = parseFloat((sewerageServiceCharge * numberOfDays).toFixed(2));
+    const totalSewerageServiceCost = roundDownToTwo(sewerageServiceCharge * numberOfDays);
   
     // Total cost is the sum of both usage costs and service cost
-    const totalCost = parseFloat((totalUsageCost + totalServiceCost + totalSewerageServiceCost).toFixed(2));
+    const totalCost = roundDownToTwo(totalUsageCost + totalServiceCost + totalSewerageServiceCost);
   
     // Average cost per day is total cost divided by number of days (avoid division by zero)
-    const averageCostPerDay = parseFloat((numberOfDays > 0 ? totalCost / numberOfDays : 0).toFixed(2));
+    const averageCostPerDay = numberOfDays > 0 ? totalCost / numberOfDays : 0;
   
     return {
       totalUsageCost,
