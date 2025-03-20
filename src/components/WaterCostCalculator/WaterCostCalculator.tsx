@@ -6,7 +6,8 @@ import { calculateWaterCost, UserInput, ResultsData } from "./CalculationLogic";
 const WaterCostCalculator = () => {
   // Initialize user input state with default values.
   const [userInput, setUserInput] = useState<UserInput>({
-    waterUsageCharge: 0,
+    retailerPrice: 0,
+    stateBulkWaterPrice: 0,
     waterServiceCharge: 0,
     sewerageServiceCharge: 0,
     waterUsage: 0,
@@ -15,6 +16,8 @@ const WaterCostCalculator = () => {
 
   // Initialize results state.
   const [results, setResults] = useState<ResultsData>({
+    totalRetailerCost: 0,
+    totalStateBulkWaterCost: 0,
     totalUsageCost: 0,
     totalServiceCost: 0,
     totalSewerageServiceCost: 0,

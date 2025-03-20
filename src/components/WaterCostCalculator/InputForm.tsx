@@ -12,12 +12,23 @@ const InputForm = ({ onFieldChange }: Props) => {
       <table className="table-md place-self-center">
         <tbody>
           <tr>
-            <th>Water Usage Charge ($ per kL)</th>
+            <th>Distributor-Retailer Price ($ per kL)</th>
             <td>
               <InputField
                 dataType="number"
                 onInputChange={(value: number) =>
-                  onFieldChange("waterUsageCharge", value)
+                  onFieldChange("retailerPrice", value)
+                }
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>State Bulk Water Price ($ per kL)</th>
+            <td>
+              <InputField
+                dataType="number"
+                onInputChange={(value: number) =>
+                  onFieldChange("stateBulkWaterPrice", value)
                 }
               />
             </td>
@@ -45,7 +56,7 @@ const InputForm = ({ onFieldChange }: Props) => {
             </td>
           </tr>
           <tr>
-            <th>Number of Days</th>
+            <th>Number of Days Charged</th>
             <td>
               <InputField
                 dataType="number"
