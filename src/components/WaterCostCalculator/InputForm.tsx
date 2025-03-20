@@ -1,12 +1,6 @@
 import InputField from "../ui/InputField";
+import { UserInput } from "./CalculationLogic";
 
-export interface UserInput {
-  waterUsageCharge: number;
-  waterServiceCharge: number;
-  sewerageServiceCharge: number;
-  waterUsage: number;
-  numberOfDays: number;
-}
 
 interface Props {
   onFieldChange: (field: keyof UserInput, value: number) => void;

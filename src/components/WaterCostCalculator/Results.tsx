@@ -1,10 +1,4 @@
-export interface ResultsData {
-  totalUsageCost: number;
-  totalServiceCost: number;
-  totalSewerageServiceCost: number;
-  totalCost: number;
-  averageCostPerDay: number;
-}
+import { ResultsData } from "./CalculationLogic";
 
 interface Props {
   data: ResultsData;
