@@ -24,17 +24,17 @@ export interface UserInput {
   export const calculateWaterCost = ({ retailerPrice, stateBulkWaterPrice, waterServiceCharge, sewerageServiceCharge, waterUsage, numberOfDays }: UserInput): ResultsData => {
 
     // Calculate the cost based on water usage charge per kL
-    const totalRetailerCost = roundDownToTwo(retailerPrice * 10000 * waterUsage / 10000);
+    const totalRetailerCost = roundDownToTwo(retailerPrice * 100 * waterUsage / 100);
 
-    const totalStateBulkWaterCost = roundDownToTwo(stateBulkWaterPrice * 10000 * waterUsage / 10000);
+    const totalStateBulkWaterCost = roundDownToTwo(stateBulkWaterPrice * 100 * waterUsage / 100);
 
     const totalUsageCost = totalRetailerCost + totalStateBulkWaterCost;
   
     // Calculate the cost based on water service charge per day
-    const totalServiceCost = roundDownToTwo(waterServiceCharge * 10000 * numberOfDays / 10000);
+    const totalServiceCost = roundDownToTwo(waterServiceCharge * 100 * numberOfDays / 100);
 
     // Calculate the cost based on sewerage service charge per day
-    const totalSewerageServiceCost = roundDownToTwo(sewerageServiceCharge * 10000 * numberOfDays / 10000);
+    const totalSewerageServiceCost = roundDownToTwo(sewerageServiceCharge * 100 * numberOfDays / 100);
   
     // Total cost is the sum of both usage costs and service cost
     const totalCost = totalUsageCost + totalServiceCost + totalSewerageServiceCost;
