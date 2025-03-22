@@ -9,7 +9,7 @@ interface Props {
 const DropDownList = ({ items, onChange }: Props) => {
   const detailsRef = useRef<HTMLDetailsElement>(null);
 
-  const handleItemClick = (item: string, e: React.MouseEvent) => {
+  const handleItemClick = (item: string) => {
     onChange(item);
     if (detailsRef.current) {
       detailsRef.current.removeAttribute("open");
@@ -34,7 +34,7 @@ const DropDownList = ({ items, onChange }: Props) => {
       <summary className="btn m-1">Please select</summary>
       <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
         {items.map((item, index) => (
-          <li key={index} onClick={(e) => handleItemClick(item, e)}>
+          <li key={index} onClick={() => handleItemClick(item)}>
             <a>{item}</a>
           </li>
         ))}
